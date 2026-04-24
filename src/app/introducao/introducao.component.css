@@ -3,52 +3,111 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: transparent; 
     padding: 80px 20px;
+
+    background: radial-gradient(circle at top, var(--highlight-bg), transparent);
 }
+
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 120px;
+  gap: 100px;
   max-width: 1200px;
   width: 100%;
 }
 
-.image img {
-    width: 300px;
-    border-radius: 20px;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+/* 🖼 IMAGEM */
+.image {
+  position: relative;
 }
 
+.image img {
+    width: 320px;
+    border-radius: 24px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+}
+
+.image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    background: linear-gradient(120deg, var(--accent), var(--accent));
+    opacity: 0.15;
+    z-index: -1;
+    filter: blur(40px);
+}
+
+.image img:hover {
+    transform: scale(1.03) rotate(-1deg);
+}
+
+/* 📄 TEXTO */
 .content {
-  max-width: 600px;
+  max-width: 560px;
 }
 
 .content h1 {
     font-size: 72px;
-    font-weight: 700;
-    margin-bottom: 30px;
-    background: linear-gradient(90deg, #6366f1, #a855f7);
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: -2px;
+
+    background: linear-gradient(90deg, var(--accent), var(--accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
+.subtitle {
+    font-size: 18px;
+    color: var(--text-main);
+    opacity: 0.7;
+    margin-bottom: 25px;
+}
+
+.highlight {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: var(--text-title);
+}
+
+.content p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 16px;
+    color: var(--text-main);
+}
+
+/* 🔘 BOTÕES */
 .buttons {
   display: flex;
-  gap: 20px;
+  gap: 16px;
+  margin-top: 25px;
 }
 
 button {
-    padding: 12px 24px;
-    border-radius: 12px;
+    padding: 12px 26px;
+    border-radius: 14px;
     font-size: 15px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease;
     font-weight: 600;
     border: none;
 }
+
+.primary {
+    background: linear-gradient(90deg, var(--accent), var(--accent));
+    color: white;
+}
+
+.primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
 .ghost {
     background: transparent;
     border: 1px solid var(--border-card);
@@ -59,33 +118,13 @@ button {
     background: var(--highlight-bg);
     border-color: var(--accent);
 }
-.highlight {
-    font-size: 20px;
-    font-weight: 500;
-    color: var(--text-title); 
-    margin-bottom: 20px;
-    transition: color 0.3s ease;
-}
 
-.content p {
-    font-size: 17px;
-    line-height: 1.8;
-    color: var(--text-main); 
-    margin-bottom: 18px;
-    transition: color 0.3s ease;
-}
+/* 🔵 DETALHE */
 .dot {
-    color: var(--accent); 
+    color: var(--accent);
 }
 
-.primary {
-    background: linear-gradient(90deg, #6366f1, #8b5cf6);
-    color: white;
-}
-.primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
-}
+/* 📱 RESPONSIVO */
 @media (max-width: 900px) {
   .container {
     flex-direction: column;
@@ -98,9 +137,10 @@ button {
   }
 
   .image img {
-    width: 220px;
+    width: 240px;
   }
+
   .buttons {
-        justify-content: center;
-    }
+    justify-content: center;
+  }
 }
