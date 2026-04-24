@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    /* Cores para o Dark Mode (Padrão) */
+    --bg-page: #0f172a;
+    --bg-section: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    --bg-card: rgba(30, 41, 59, 0.7);
+    --border-card: rgba(255, 255, 255, 0.1);
+    --text-title: #f8fafc;
+    --text-main: #cbd5e1;
+    --text-muted: #94a3b8;
+    --accent: #818cf8;
+    --highlight-bg: rgba(129, 140, 248, 0.15);
+}
+
+body.light-theme {
+    /* Cores para o Light Mode (Exatamente o que você me mandou) */
+    --bg-page: #f1f5f9;
+    --bg-section: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+    --bg-card: rgba(255, 255, 255, 0.85);
+    --border-card: rgba(255, 255, 255, 0.6);
+    --text-title: #0f172a; /* Cor dos títulos no light */
+    --text-main: #1e293b;  /* Cor da descrição */
+    --text-muted: #334155; /* Cor dos parágrafos nos cards */
+    --accent: #4f46e5;
+    --highlight-bg: rgba(99, 102, 241, 0.12);
+}
+body{
+    background: var(--bg-section); /* Use a variável que criamos */
+    min-height: 100vh;
+    margin: 0;
+}
+.sobre, .experiencias, .projetos, .contato, .introducao {
+    background: transparent !important;
+    padding: 80px 20px;
+}

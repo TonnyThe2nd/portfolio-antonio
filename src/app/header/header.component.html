@@ -1,0 +1,43 @@
+<nav class="navbar" [class.light]="isLight" [class.scrolled]="isScrolled">
+  <div class="logo">./Dev</div>
+
+  <ul class="menu" [class.open]="menuAberto">
+    <li 
+      (click)="rolarComponente('introducao')" 
+      [class.active]="activeSection === 'introducao'">
+      Introdução
+    </li>
+    <li 
+      (click)="rolarComponente('habilidades')" 
+      [class.active]="activeSection === 'habilidades'">
+      Sobre Mim
+    </li>
+    <li 
+      (click)="rolarComponente('experiencias')" 
+      [class.active]="activeSection === 'experiencias'">
+      Experiências
+    </li>
+    <li 
+      (click)="rolarComponente('projetos')" 
+      [class.active]="activeSection === 'projetos'">
+      Projetos
+    </li>
+    <li 
+      (click)="rolarComponente('contato')" 
+      [class.active]="activeSection === 'contato'">
+      Contato
+    </li>
+  </ul>
+
+  <div class="actions">
+    <button class="icon-btn" (click)="toggleTheme()">
+      {{ isLight ? '🌙' : '☀️' }}
+    </button>
+
+    <button class="hamburger" (click)="menuAberto = !menuAberto">
+      ☰
+    </button>
+
+    <span class="lang">US EN</span>
+  </div>
+</nav>

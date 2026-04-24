@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    font-family: system-ui, 'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    background: var(--bg-section);
+    min-height: 100vh;
+    margin: 0;
+}
+
+.contato {
+    padding: 60px 20px;
+    background: var(--bg-section);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    background: linear-gradient(120deg, #4f46e5, #c026d3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+}
+
+.contato-content {
+    display: flex;
+    justify-content: center;
+}
+
+.contato-info {
+    max-width: 700px;
+    width: 100%;
+}
+
+.contato-info h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-title);
+    margin-bottom: 16px;
+}
+
+.contato-info p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-main);
+    margin-bottom: 32px;
+}
+
+.contato-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contato-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: var(--bg-card);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    border: 1px solid var(--border-card);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.contato-item:hover {
+    transform: translateX(6px);
+    background: var(--highlight-bg);
+    box-shadow: 0 8px 20px -10px rgba(79, 70, 229, 0.2);
+}
+
+.contato-icon {
+    font-size: 1.8rem;
+    min-width: 48px;
+    text-align: center;
+}
+
+.contato-detalhes {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.contato-detalhes strong {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-title);
+}
+
+.contato-detalhes span {
+    font-size: 0.85rem;
+    color: var(--accent);
+    word-break: break-all;
+}
+
+/* Animações */
+.fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.5s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 640px) {
+    .contato {
+        padding: 48px 16px;
+    }
+
+    .title {
+        font-size: 28px;
+        margin-bottom: 32px;
+    }
+
+    .contato-info h3 {
+        font-size: 1.3rem;
+    }
+
+    .contato-item {
+        padding: 14px 16px;
+    }
+
+    .contato-icon {
+        font-size: 1.5rem;
+        min-width: 40px;
+    }
+
+    .contato-detalhes strong {
+        font-size: 0.85rem;
+    }
+
+    .contato-detalhes span {
+        font-size: 0.75rem;
+    }
+}
