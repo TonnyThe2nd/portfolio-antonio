@@ -8,13 +8,12 @@ import { Component, HostListener, OnInit } from '@angular/core';
   imports: []
 })
 export class HeaderComponent implements OnInit {
-  isLight = true; // Começamos como Light baseado no seu CSS anterior
+  isLight = true; 
   menuAberto = false;
   activeSection: string = 'introducao';
   isScrolled: boolean = false;
 
   ngOnInit() {
-    // Garante que o body comece com a classe correta
     this.applyTheme();
   }
 

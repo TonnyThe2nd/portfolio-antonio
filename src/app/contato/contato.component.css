@@ -23,6 +23,7 @@ body {
 }
 
 .title {
+    color: var(--accent);
     font-size: 32px;
     font-weight: 800;
     margin-bottom: 40px;
@@ -107,7 +108,6 @@ body {
     word-break: break-all;
 }
 
-/* Animações */
 .fade-up {
     opacity: 0;
     transform: translateY(20px);
@@ -121,7 +121,6 @@ body {
     }
 }
 
-/* Responsividade */
 @media (max-width: 640px) {
     .contato {
         padding: 48px 16px;
