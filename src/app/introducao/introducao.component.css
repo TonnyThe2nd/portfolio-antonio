@@ -5,7 +5,6 @@
     justify-content: center;
     padding: 80px 20px;
 
-    background: radial-gradient(circle at top, var(--highlight-bg), transparent);
 }
 
 .container {
@@ -17,7 +16,6 @@
   width: 100%;
 }
 
-/* 🖼 IMAGEM */
 .image {
   position: relative;
 }
@@ -44,7 +42,6 @@
     transform: scale(1.03) rotate(-1deg);
 }
 
-/* 📄 TEXTO */
 .content {
   max-width: 560px;
 }
@@ -81,7 +78,6 @@
     color: var(--text-main);
 }
 
-/* 🔘 BOTÕES */
 .buttons {
   display: flex;
   gap: 16px;
@@ -119,12 +115,10 @@ button {
     border-color: var(--accent);
 }
 
-/* 🔵 DETALHE */
 .dot {
     color: var(--accent);
 }
 
-/* 📱 RESPONSIVO */
 @media (max-width: 900px) {
   .container {
     flex-direction: column;
