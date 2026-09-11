@@ -1,140 +1,198 @@
-.intro {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 20px;
-
+.hero {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  align-items: center;
+  gap: 80px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
-
-.container {
+.availability {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 100px;
-  max-width: 1200px;
-  width: 100%;
+  gap: 9px;
+  font:
+    10px Consolas,
+    monospace;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-bottom: 32px;
 }
-
-.image {
-  position: relative;
+.availability > span {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--raised);
 }
-
-.image img {
-    width: 320px;
-    border-radius: 24px;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
-    transition: all 0.4s ease;
+.intro-name {
+  font-size: 18px;
+  color: var(--text);
+  margin-bottom: 18px;
 }
-
-.image::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 24px;
-    background: linear-gradient(120deg, var(--accent), var(--accent));
-    opacity: 0.15;
-    z-index: -1;
-    filter: blur(40px);
+h1 {
+  font-size: clamp(40px, 4.6vw, 64px);
+  font-weight: 550;
+  letter-spacing: -3.2px;
+  line-height: 1.09;
 }
-
-.image img:hover {
-    transform: scale(1.03) rotate(-1deg);
+h1 em {
+  font-style: normal;
+  color: var(--accent);
 }
-
-.content {
-  max-width: 560px;
+.description {
+  font-size: 15px;
+  max-width: 490px;
+  margin-top: 26px;
 }
-
-.content h1 {
-    font-size: 72px;
-    font-weight: 800;
-    margin-bottom: 10px;
-    letter-spacing: -2px;
-
-    background: linear-gradient(90deg, var(--accent), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.subtitle {
-    font-size: 18px;
-    color: var(--text-main);
-    opacity: 0.7;
-    margin-bottom: 25px;
-}
-
-.highlight {
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 20px;
-    color: var(--text-title);
-}
-
-.content p {
-    font-size: 16px;
-    line-height: 1.8;
-    margin-bottom: 16px;
-    color: var(--text-main);
-}
-
-.buttons {
+.hero-actions {
   display: flex;
-  gap: 16px;
-  margin-top: 25px;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
 }
-
-button {
-    padding: 12px 26px;
-    border-radius: 14px;
-    font-size: 15px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 600;
-    border: none;
+.hero-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+  margin-top: 42px;
 }
-
-.primary {
-    background: linear-gradient(90deg, var(--accent), var(--accent));
-    color: white;
+.hero-stack > span {
+  font:
+    9px Consolas,
+    monospace;
+  letter-spacing: 1px;
+  color: var(--muted);
 }
-
-.primary:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+.hero-stack b {
+  font-size: 12px;
+  font-weight: 500;
 }
-
-.ghost {
-    background: transparent;
-    border: 1px solid var(--border-card);
-    color: var(--accent);
+.portrait-wrap {
+  position: relative;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  transform: rotate(2deg);
+  background: var(--surface);
 }
-
-.ghost:hover {
-    background: var(--highlight-bg);
-    border-color: var(--accent);
+.portrait {
+  display: block;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  object-position: center 27%;
+  filter: grayscale(1);
+  border-radius: 3px;
 }
-
-.dot {
-    color: var(--accent);
+.portrait-top,
+.portrait-bottom {
+  display: flex;
+  justify-content: space-between;
+  font:
+    9px Consolas,
+    monospace;
+  letter-spacing: 1.3px;
+  color: var(--muted);
+  padding: 4px 2px 16px;
 }
-
-@media (max-width: 900px) {
-  .container {
-    flex-direction: column;
-    gap: 50px;
-    text-align: center;
+.portrait-bottom {
+  padding: 16px 2px 4px;
+}
+.role-card {
+  position: absolute;
+  bottom: 42px;
+  left: -34px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  background: var(--accent);
+  color: var(--ink);
+  padding: 20px 24px;
+  transform: rotate(-2deg);
+  border-radius: 5px;
+  box-shadow: 0 12px 40px #0003;
+}
+.role-symbol {
+  font-size: 32px;
+}
+.role-card div {
+  display: grid;
+  gap: 7px;
+}
+.role-card div > span {
+  font:
+    9px Consolas,
+    monospace;
+  letter-spacing: 1px;
+}
+.role-card strong {
+  font-size: 16px;
+  font-weight: 600;
+}
+.hero-foot {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 28px;
+  font:
+    10px Consolas,
+    monospace;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+.hero-foot a span {
+  color: var(--accent);
+  margin-left: 18px;
+}
+@media (max-width: 1000px) {
+  .hero {
+    gap: 40px;
   }
-
-  .content h1 {
-    font-size: 48px;
+  h1 {
+    letter-spacing: -2px;
   }
-
-  .image img {
-    width: 240px;
+  .portrait {
+    height: 390px;
   }
-
-  .buttons {
-    justify-content: center;
+  .hero-stack {
+    gap: 12px;
+  }
+}
+@media (max-width: 700px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 46px;
+    gap: 44px;
+    padding-bottom: 48px;
+  }
+  h1 {
+    font-size: 46px;
+  }
+  .portrait-wrap {
+    width: min(360px, calc(100% - 20px));
+    margin: 0 auto;
+  }
+  .portrait {
+    height: 350px;
+  }
+  .role-card {
+    left: -15px;
+    padding: 16px;
+  }
+  .hero-foot {
+    gap: 20px;
+    line-height: 1.7;
+  }
+  .hero-foot > span {
+    max-width: 180px;
+  }
+  .availability {
+    font-size: 9px;
+    line-height: 1.6;
+  }
+  .hero-actions .button {
+    gap: 12px;
+    padding: 14px 16px;
   }
 }

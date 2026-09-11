@@ -1,170 +1,101 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.experience {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  padding: 36px 0;
+  border-top: 1px solid var(--line);
+  gap: 32px;
 }
-
-body {
-    font-family: system-ui, 'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
-    background: var(--bg-section);
-    min-height: 100vh;
-    margin: 0;
+.period {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 18px;
+  font:
+    11px Consolas,
+    monospace;
+  letter-spacing: 1px;
+  color: var(--muted);
 }
-
-.experiencias {
-    padding: 60px 20px;
-    background: var(--bg-section);
-    transition: background 0.3s ease;
+.current {
+  color: var(--accent);
+  font-size: 10px;
+  background: var(--raised);
+  padding: 7px 10px;
+  border-radius: 4px;
+  letter-spacing: 0;
 }
-
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
+.current::before {
+  content: "●";
+  font-size: 8px;
+  margin-right: 7px;
 }
-
-.title {
-    color: var(--accent);
-    font-size: 32px;
-    font-weight: 800;
-    margin-bottom: 32px;
-    background: linear-gradient(120deg, #4f46e5, #c026d3);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -0.02em;
+.company {
+  font-size: 13px;
+  color: var(--accent);
 }
-
-.exp-card {
-    background: var(--bg-card);
-    backdrop-filter: blur(8px);
-    border-radius: 24px;
-    padding: 24px;
-    margin-bottom: 24px;
-    border: 1px solid var(--border-card);
-    transition: all 0.3s ease;
+h3 {
+  font-size: 25px;
+  margin: 10px 0;
 }
-
-.exp-card:hover {
-    transform: translateX(4px);
-    background: var(--bg-card);
-    box-shadow: 0 12px 24px -12px rgba(79, 70, 229, 0.2);
-    border-color: var(--accent);
+.context {
+  font-size: 13px;
 }
-
-.exp-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 12px;
-    gap: 8px;
+ul {
+  padding-left: 17px;
+  margin: 22px 0;
 }
-
-.exp-titulo {
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: var(--text-title);
+li {
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--muted);
+  padding-left: 6px;
+  margin-bottom: 8px;
 }
-
-.exp-periodo {
-    font-size: 0.8rem;
-    color: var(--accent);
-    background: var(--highlight-bg);
-    padding: 4px 12px;
-    border-radius: 40px;
-    font-weight: 500;
+li::marker {
+  color: var(--accent);
 }
-
-.exp-empresa {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--accent);
-    margin-bottom: 12px;
-    display: flex;
+details {
+  padding: 25px 0;
+  border-block: 1px solid var(--line);
+  font-size: 13px;
+}
+summary {
+  cursor: pointer;
+}
+summary > span {
+  float: right;
+  color: var(--muted);
+  font-size: 12px;
+}
+.previous {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  padding-top: 26px;
+}
+.previous p {
+  font-size: 13px;
+}
+.previous strong {
+  color: var(--text);
+  font-weight: 500;
+}
+@media (max-width: 700px) {
+  .experience {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .period {
+    flex-direction: row;
     align-items: center;
-    gap: 8px;
-}
-
-.exp-descricao {
-    font-size: 0.9rem;
-    line-height: 1.55;
-    color: var(--text-muted);
-    margin-bottom: 16px;
-}
-
-.exp-techs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.exp-techs span {
-    background: var(--highlight-bg);
-    color: var(--accent);
-    font-weight: 500;
-    padding: 6px 14px;
-    border-radius: 40px;
-    font-size: 0.75rem;
-    transition: all 0.2s ease;
-    cursor: default;
-}
-
-.exp-techs span:hover {
-    background: var(--accent);
-    color: white;
-    transform: scale(1.02);
-}
-
-.research-badge {
-    background: linear-gradient(135deg, var(--highlight-bg), rgba(192, 38, 211, 0.08));
-    border-left: 4px solid #c026d3;
-}
-
-.fade-up {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 0.5s ease forwards;
-}
-
-.delay {
-    animation-delay: 0.1s;
-}
-
-.delay-2 {
-    animation-delay: 0.2s;
-}
-
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 640px) {
-    .experiencias {
-        padding: 48px 16px;
-    }
-
-    .title {
-        font-size: 28px;
-    }
-
-    .exp-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .exp-titulo {
-        font-size: 1.2rem;
-    }
-
-    .exp-card {
-        padding: 20px;
-    }
-
-    .exp-techs span {
-        padding: 5px 12px;
-        font-size: 0.7rem;
-    }
+    justify-content: space-between;
+  }
+  .previous {
+    grid-template-columns: 1fr;
+  }
+  summary > span {
+    float: none;
+    display: block;
+    margin-top: 10px;
+  }
 }

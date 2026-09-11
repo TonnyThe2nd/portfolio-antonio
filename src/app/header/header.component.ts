@@ -2,72 +2,60 @@ import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
   standalone: true,
-  imports: []
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.css',
 })
 export class HeaderComponent implements OnInit {
-  isLight = true; 
+  isLight = false;
   menuAberto = false;
-  activeSection: string = 'introducao';
-  isScrolled: boolean = false;
-
+  activeSection = 'introducao';
+  readonly links = [
+    { id: 'habilidades', label: 'Sobre' },
+    { id: 'experiencias', label: 'Experiência' },
+    { id: 'projetos', label: 'Projetos' },
+    { id: 'contato', label: 'Contato' },
+  ];
   ngOnInit() {
+    try {
+      this.isLight = localStorage.getItem('portfolio-theme') === 'light';
+    } catch {
+      /* Tema padrão quando o armazenamento não estiver disponível. */
+    }
     this.applyTheme();
   }
-
-  @HostListener('window:scroll')
-  onScroll() {
-    this.isScrolled = window.scrollY > 50;
-    this.updateActiveSection();
-  }
-
-  updateActiveSection() {
-    const sections = ['introducao', 'habilidades', 'experiencias', 'projetos', 'contato'];
-    const scrollPosition = window.scrollY + 100;
-
-    for (const section of sections) {
-      const element = document.getElementById(section);
-      if (element) {
-        const offsetTop = element.offsetTop;
-        const offsetBottom = offsetTop + element.offsetHeight;
-
-        if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-          this.activeSection = section;
-          break;
-        }
+  @HostListener('window:scroll') onScroll() {
+    for (const id of [
+      'introducao',
+      ...this.links.map((link) => link.id),
+    ].reverse()) {
+      if (
+        (document.getElementById(id)?.getBoundingClientRect().top ??
+          Infinity) <= 150
+      ) {
+        this.activeSection = id;
+        break;
       }
     }
+    if (
+      window.innerHeight + window.scrollY >=
+      document.documentElement.scrollHeight - 8
+    )
+      this.activeSection = 'contato';
   }
-
+  @HostListener('document:keydown.escape') closeMenu() {
+    this.menuAberto = false;
+  }
   toggleTheme() {
     this.isLight = !this.isLight;
     this.applyTheme();
+    try {
+      localStorage.setItem('portfolio-theme', this.isLight ? 'light' : 'dark');
+    } catch {
+      /* A troca de tema continua funcionando sem persistência. */
+    }
   }
-
   private applyTheme() {
-    if (this.isLight) {
-      document.body.classList.add('light-theme');
-    } else {
-      document.body.classList.remove('light-theme');
-    }
-  }
-
-  closeMenu() {
-    this.menuAberto = false;
-  }
-
-  rolarComponente(id: string) {
-    this.activeSection = id;
-    this.closeMenu(); 
-    
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth', 
-        block: 'start'
-      });
-    }
+    document.body.classList.toggle('light-theme', this.isLight);
   }
 }

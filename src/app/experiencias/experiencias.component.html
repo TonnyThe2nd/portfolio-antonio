@@ -1,55 +1,64 @@
-<section class="experiencias">
-    <div class="container">
-        <h2 class="title"> Experiências</h2>
-
-        <div class="exp-card fade-up">
-            <div class="exp-header">
-                <span class="exp-titulo">Desenvolvedor Full Stack</span>
-                <span class="exp-periodo">2025 – Atual</span>
-            </div>
-            <div class="exp-empresa">
-                <span>🏛️</span> Centro Universitário Barão de Mauá
-            </div>
-            <p class="exp-descricao">
-                Desenvolvimento de aplicações web utilizando .NET Core, ASP.NET, Angular e SQL Server. 
-                Implementação e manutenção de APIs REST e Web Services com integração front-end/back-end via Angular. 
-                Criação de scripts e automação de processos, otimizando fluxos internos e reduzindo retrabalho. 
-                Uso de arquiteturas MVC, MVVM e MVP, além de otimização de desempenho e manutenção de sistemas.
-            </p>
-            <div class="exp-techs">
-                <span>.NET Core</span>
-                <span>ASP.NET</span>
-                <span>Angular</span>
-                <span>Web Services</span>
-                <span>N8N</span>
-                <span>SQL Server</span>
-                <span>REST APIs</span>
-                <span>MVC/MVVM</span>
-            </div>
-        </div>
-
-        <div class="exp-card research-badge fade-up delay">
-            <div class="exp-header">
-                <span class="exp-titulo">Pesquisador em Inteligência Artificial</span>
-                <span class="exp-periodo">2024 – Atual</span>
-            </div>
-            <div class="exp-empresa">
-                <span>🎓</span> Universidade de São Paulo (USP)
-            </div>
-            <p class="exp-descricao">
-                Pesquisa em IA aplicada à detecção precoce de doenças neurodegenerativas (Alzheimer).
-                Desenvolvimento de modelos de Deep Learning e Visão Computacional, pré-processamento
-                e análise de imagens médicas utilizando redes neurais convolucionais (CNNs).
-            </p>
-            <div class="exp-techs">
-                <span>TensorFlow</span>
-                <span>PyTorch</span>
-                <span>OpenCV</span>
-                <span>MediaPipe</span>
-                <span>Deep Learning</span>
-                <span>CNNs</span>
-                <span>Python</span>
-            </div>
-        </div>
+<div class="section">
+  <div class="container">
+    <span class="eyebrow">02 — TRAJETÓRIA</span>
+    <div class="section-heading">
+      <h2>Experiência que se traduz<br />em soluções.</h2>
+      <p>
+        Desenvolvimento corporativo e pesquisa científica: perspectivas
+        complementares para resolver problemas.
+      </p>
     </div>
-</section>
+    <div class="timeline">
+      @for (experience of experiences; track experience.company) {
+        <article class="experience">
+          <div class="period">
+            <span>{{ experience.period }}</span>
+            @if (experience.current) {
+              <span class="current">Em andamento</span>
+            }
+          </div>
+          <div class="experience-content">
+            <span class="company">{{ experience.company }}</span>
+            <h3>{{ experience.role }}</h3>
+            <p class="context">{{ experience.context }}</p>
+            <ul>
+              @for (item of experience.items; track item) {
+                <li>{{ item }}</li>
+              }
+            </ul>
+            <div class="tags">
+              @for (tech of experience.techs; track tech) {
+                <span>{{ tech }}</span>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+    <details>
+      <summary>
+        Antes do desenvolvimento <span>Suporte, ensino e organização ↗</span>
+      </summary>
+      <div class="previous">
+        <p>
+          <strong>Estágio em Suporte Técnico · Barão de Mauá</strong><br />Jun —
+          dez 2024 · Suporte a usuários, sistemas acadêmicos e configuração de
+          software e hardware.
+        </p>
+        <p>
+          <strong>Estagiário de Suporte em TI · Compliance Soluções</strong
+          ><br />Jan — mai 2024 · Resolução de chamados e manutenção de
+          infraestrutura.
+        </p>
+        <p>
+          <strong>Professor de Inglês · CNA Idiomas</strong><br />2022 — 2024 ·
+          Ensino, elaboração de materiais e acompanhamento da aprendizagem.
+        </p>
+        <p>
+          <strong>Assistente de Escritório · Baller Construções</strong
+          ><br />2021 — 2022 · Organização administrativa e suporte interno.
+        </p>
+      </div>
+    </details>
+  </div>
+</div>

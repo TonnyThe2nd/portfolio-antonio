@@ -1,82 +1,70 @@
-<section class="sobre">
-    <div class="container">
-        <h2 class="title">Sobre mim</h2>
-
-        <p class="descricao fade-up">
-            Sou um desenvolvedor full stack focado na construção de aplicações web escaláveis,
-            APIs robustas e sistemas bem estruturados, utilizando
-            <span class="highlight">.NET, Java, Angular e Python</span>.
-        </p>
-
-        <p class="descricao fade-up delay">
-            Tenho grande interesse em Inteligência Artificial e Visão Computacional,
-            desenvolvendo soluções com <span class="highlight">Deep Learning</span> para análise de dados e imagens.
-        </p>
-
-        <p class="descricao fade-up delay-2">
-            Também aplico automação no desenvolvimento, criando scripts, integrações e fluxos que
-            aumentam produtividade, reduzem retrabalho e tornam o processo mais eficiente.
-        </p>
-
-        <div class="cards">
-            <div class="card fade-up">
-                <div class="icon">⚙️</div>
-                <h3>Back-end & APIs</h3>
-                <p>APIs REST, arquitetura em camadas, integração entre sistemas e otimização com .NET e Java.</p>
-            </div>
-
-            <div class="card fade-up delay">
-                <div class="icon">💻</div>
-                <h3>Front-end</h3>
-                <p>Interfaces modernas com Angular, TypeScript, consumo de APIs, performance e UX.</p>
-            </div>
-
-            <div class="card fade-up delay-2">
-                <div class="icon">🧠</div>
-                <h3>Inteligência Artificial</h3>
-                <p>Modelos com TensorFlow e PyTorch, visão computacional com OpenCV e Deep Learning.</p>
-            </div>
-
-            <div class="card fade-up delay-3">
-                <div class="icon">⚡</div>
-                <h3>Automação</h3>
-                <p>Scripts e integrações, otimização de fluxos, manipulação de dados e redução de retrabalho.</p>
-            </div>
-        </div>
-
-        <div class="tecnologias fade-up delay-2">
-            <h3>Tecnologias & Ferramentas</h3>
-            <div class="tech-list">
-                <span>.NET Core</span>
-                <span>ASP.NET</span>
-                <span>Java</span>
-                <span>Angular</span>
-                <span>TypeScript</span>
-                <span>Python</span>
-                <span>TensorFlow</span>
-                <span>PyTorch</span>
-                <span>OpenCV</span>
-                <span>SQL Server</span>
-                <span>PostgreSQL</span>
-                <span>MySQL</span>
-                <span>MongoDB</span>
-                <span>Dapper</span>
-                <span>Entity Framework</span>
-                <span>Docker</span>
-                <span>Git</span>
-            </div>
-        </div>
-
-        <div class="metodologias fade-up delay-3">
-            <h3>Metodologias & Boas Práticas</h3>
-            <div class="tech-list">
-                <span>Clean Code</span>
-                <span>Arquitetura em Camadas</span>
-                <span>POO</span>
-                <span>SOLID</span>
-                <span>Scrum</span>
-                <span>Kanban</span>
-            </div>
-        </div>
+<div class="section">
+  <div class="container">
+    <span class="eyebrow">01 — SOBRE MIM</span>
+    <div class="section-heading">
+      <h2>Visão de ponta a ponta.<br />Profundidade no back-end.</h2>
+      <p>
+        Da integração de dados à experiência de quem usa. Gosto de entender o
+        problema antes de escrever a solução.
+      </p>
     </div>
-</section>
+    <div class="about-grid">
+      <div class="about-copy">
+        <p>
+          Sou <strong>Antonio Marcos Sousa de Oliveira</strong>, desenvolvedor
+          Full Stack e graduando em Ciência da Computação. Minha atuação combina
+          aplicações corporativas, APIs e integração de dados com .NET/C# e
+          Python.
+        </p>
+        <p>
+          Na <strong>Radix</strong>, atuo no projeto International Paper com
+          dados operacionais, performance e automação. Na <strong>USP</strong>,
+          desenvolvo pesquisa em inteligência artificial e processamento de
+          imagens aplicada à detecção precoce de Alzheimer.
+        </p>
+        <div class="traits">
+          <span>Clareza na comunicação</span><span>Pensamento analítico</span
+          ><span>Colaboração</span><span>Aprendizado contínuo</span>
+        </div>
+      </div>
+      <aside class="education">
+        <span class="small-label">FORMAÇÃO & IDIOMAS</span>
+        <h3>Ciência da Computação</h3>
+        <p>Universidade Paulista · UNIP<br />Conclusão prevista em 2026</p>
+        <div class="languages">
+          <span>Português <b>Nativo</b></span
+          ><span>Inglês <b>Fluente · Cambridge FCE</b></span
+          ><span>Espanhol <b>Intermediário</b></span
+          ><span>Japonês <b>Básico</b></span>
+        </div>
+      </aside>
+    </div>
+    <div class="skills-grid">
+      @for (skill of skills; track skill.title) {
+        <article class="skill">
+          <span class="skill-code">{{ skill.code }}</span>
+          <h3>{{ skill.title }}</h3>
+          <p>{{ skill.description }}</p>
+          <div class="tags">
+            @for (tech of skill.techs; track tech) {
+              <span>{{ tech }}</span>
+            }
+          </div>
+        </article>
+      }
+    </div>
+    <details class="certifications">
+      <summary>
+        Formação complementar <span>4 cursos certificados ↗</span>
+      </summary>
+      <ul>
+        <li>
+          Machine Learning e Data Science com Python de A a Z — Udemy, 2024
+        </li>
+        <li>Java Completo POO — Udemy, 2024</li>
+        <li>Python Mundo 1, 2 e 3 — Curso em Vídeo, 2023</li>
+        <li>C# e Programação Orientada a Objetos — Udemy, 2023</li>
+      </ul>
+    </details>
+  </div>
+</div>

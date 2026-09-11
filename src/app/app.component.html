@@ -1,25 +1,22 @@
-<app-header></app-header>
-
-<main>
-  <section id="introducao">
-    <app-introducao></app-introducao>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<app-header />
+<main id="conteudo">
+  <section id="introducao" aria-label="Apresentação">
+    <app-introducao />
   </section>
-
-  <section id="habilidades">
-    <app-sobre></app-sobre>
+  <section id="habilidades" aria-label="Sobre e habilidades">
+    <app-sobre />
   </section>
-
-  <section id="experiencias">
-    <app-experiencias></app-experiencias>
+  <section id="experiencias" aria-label="Experiência profissional">
+    <app-experiencias />
   </section>
-
-  <section id="projetos">
-    <app-projetos></app-projetos>
-  </section>
-
-  <section id="contato">
-    <app-contato></app-contato>
-  </section>
+  <section id="projetos" aria-label="Projetos"><app-projetos /></section>
+  <section id="contato" aria-label="Contato"><app-contato /></section>
 </main>
-
-<router-outlet></router-outlet>
+<footer>
+  <div class="container">
+    <span>© {{ year }} Antonio Marcos Oliveira</span
+    ><span>Feito com Angular. Pensado em cada detalhe.</span
+    ><a href="#introducao">Voltar ao topo ↑</a>
+  </div>
+</footer>

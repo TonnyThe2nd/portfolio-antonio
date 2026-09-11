@@ -1,43 +1,41 @@
-<nav class="navbar" [class.light]="isLight" [class.scrolled]="isScrolled">
-  <div class="logo">./Dev</div>
-
-  <ul class="menu" [class.open]="menuAberto">
-    <li 
-      (click)="rolarComponente('introducao')" 
-      [class.active]="activeSection === 'introducao'">
-      Introdução
-    </li>
-    <li 
-      (click)="rolarComponente('habilidades')" 
-      [class.active]="activeSection === 'habilidades'">
-      Sobre Mim
-    </li>
-    <li 
-      (click)="rolarComponente('experiencias')" 
-      [class.active]="activeSection === 'experiencias'">
-      Experiências
-    </li>
-    <li 
-      (click)="rolarComponente('projetos')" 
-      [class.active]="activeSection === 'projetos'">
-      Projetos
-    </li>
-    <li 
-      (click)="rolarComponente('contato')" 
-      [class.active]="activeSection === 'contato'">
-      Contato
-    </li>
-  </ul>
-
-  <div class="actions">
-    <button class="icon-btn" (click)="toggleTheme()">
-      {{ isLight ? '🌙' : '☀️' }}
-    </button>
-
-    <button class="hamburger" (click)="menuAberto = !menuAberto">
-      ☰
-    </button>
-
-    <span class="lang">US EN</span>
-  </div>
-</nav>
+<header class="header">
+  <nav class="container navigation" aria-label="Navegação principal">
+    <a
+      class="logo"
+      href="#introducao"
+      (click)="closeMenu()"
+      aria-label="Antonio Marcos, início"
+      >am<span>.</span><span class="logo-caption">ANTONIO MARCOS</span></a
+    >
+    <div class="menu" id="navigation-menu" [class.open]="menuAberto">
+      @for (link of links; track link.id) {
+        <a
+          [href]="'#' + link.id"
+          (click)="closeMenu()"
+          [class.active]="activeSection === link.id"
+          [attr.aria-current]="activeSection === link.id ? 'location' : null"
+          >{{ link.label }}</a
+        >
+      }
+    </div>
+    <div class="actions">
+      <button
+        class="theme"
+        (click)="toggleTheme()"
+        [attr.aria-label]="isLight ? 'Ativar tema escuro' : 'Ativar tema claro'"
+      >
+        {{ isLight ? "◐" : "☼" }}</button
+      ><a class="resume" href="assets/curriculo-antonio-marcos.pdf" download
+        >Currículo <span aria-hidden="true">↗</span></a
+      ><button
+        class="hamburger"
+        (click)="menuAberto = !menuAberto"
+        [attr.aria-expanded]="menuAberto"
+        aria-controls="navigation-menu"
+        [attr.aria-label]="menuAberto ? 'Fechar menu' : 'Abrir menu'"
+      >
+        {{ menuAberto ? "✕" : "☰" }}
+      </button>
+    </div>
+  </nav>
+</header>
