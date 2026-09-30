@@ -46,16 +46,16 @@
 }
 .project-visual {
   height: 210px;
-  background-color: #1c2921;
+  background-color: var(--visual-bg);
   background-image:
-    linear-gradient(#bfe79808 1px, transparent 1px),
-    linear-gradient(90deg, #bfe79808 1px, transparent 1px);
+    linear-gradient(var(--visual-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--visual-grid) 1px, transparent 1px);
   background-size: 24px 24px;
   padding: 22px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: #bad39e;
+  color: var(--muted);
 }
 .visual-caption,
 .visual-footer {
@@ -74,8 +74,8 @@
   gap: 10px;
 }
 .diagram > span {
-  border: 1px solid #afcb9855;
-  background: #172118d9;
+  border: 1px solid var(--diagram-line);
+  background: var(--diagram-bg);
   padding: 17px 12px;
   font:
     9px Consolas,
@@ -85,29 +85,26 @@
   text-align: center;
 }
 .diagram > span:nth-of-type(2) {
-  border-color: #b7dc88;
-  color: #d5f2b3;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 .diagram b {
   font-weight: 400;
 }
 .network,
 .vision {
-  background-color: #18272c;
-  color: #a7cbd3;
+  background-color: var(--visual-alt);
 }
 .chat,
 .weather {
-  background-color: #25283b;
-  color: #c0c5eb;
+  background-color: var(--visual-bg);
 }
 .heatmap {
-  background-color: #352a23;
-  color: #e9c4a7;
+  background-color: var(--visual-warm);
   background-image:
-    radial-gradient(ellipse at center, #ac753c40, transparent 65%),
-    linear-gradient(#edcc9c08 1px, transparent 1px),
-    linear-gradient(90deg, #edcc9c08 1px, transparent 1px);
+    radial-gradient(ellipse at center, var(--visual-glow), transparent 65%),
+    linear-gradient(var(--visual-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--visual-grid) 1px, transparent 1px);
 }
 .project-body {
   padding: 28px;
