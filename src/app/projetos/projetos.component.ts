@@ -17,29 +17,41 @@ export class ProjetosComponent {
     {
       id: '01',
       category: 'Back-end',
-      title: 'E-commerce com microsserviços',
+      title: 'Code Agent — IA local e hardware',
       description:
-        'Plataforma com serviços em .NET e comunicação assíncrona via Kafka. Arquitetura orientada a eventos para conectar os fluxos do e-commerce.',
-      techs: ['.NET', 'Kafka', 'SQL Server', 'Docker'],
+        'Agente de código com modelos locais via Ollama, seleção por orçamento de RAM/VRAM e planejamento de subtarefas. Leitura e edição de arquivos com ferramentas controladas.',
+      techs: ['Python', 'Ollama', 'DDD', 'Docker'],
       visual: 'events',
-      diagram: ['API / .NET', 'APACHE KAFKA', 'MICROSSERVIÇOS'],
-      url: '',
-      label: '',
+      diagram: ['HARDWARE', 'OLLAMA', 'FERRAMENTAS'],
+      url: 'https://github.com/TonnyThe2nd/code_agent_with_hardware_management',
+      label: 'Ver repositório',
     },
     {
       id: '02',
       category: 'Inteligência artificial',
-      title: 'IA distribuída com RabbitMQ',
+      title: 'File Reader Agent — consulta com RAG',
       description:
-        'Classificação de imagens com CNNs e processamento assíncrono. Workers escaláveis conectam os modelos de IA à aplicação web.',
-      techs: ['TensorFlow', 'RabbitMQ', 'Angular', '.NET'],
+        'Consulta a documentos com IA local, busca híbrida e RAG. Interface de chat com fontes clicáveis, biblioteca de arquivos e histórico persistente por usuário.',
+      techs: ['Angular', 'FastAPI', 'PostgreSQL', 'Ollama'],
       visual: 'network',
-      diagram: ['IMAGEM', 'RABBITMQ', 'CNN / WORKERS'],
-      url: '',
-      label: '',
+      diagram: ['DOCUMENTOS', 'RAG', 'CHAT / FONTES'],
+      url: 'https://github.com/TonnyThe2nd/file-reader-agent',
+      label: 'Ver repositório',
     },
     {
       id: '03',
+      category: 'Full Stack',
+      title: 'UrbanEye — monitoramento ambiental',
+      description:
+        'Aplicativo colaborativo para registrar ocorrências ambientais com fotos e geolocalização. Proposta offline-first com Flutter e backend modular em FastAPI.',
+      techs: ['Flutter', 'FastAPI', 'PostgreSQL / PostGIS', 'RabbitMQ'],
+      visual: 'events',
+      diagram: ['FLUTTER', 'FASTAPI', 'POSTGIS'],
+      url: 'https://github.com/TonnyThe2nd/ambiental-app',
+      label: 'Ver repositório',
+    },
+    {
+      id: '04',
       category: 'Full Stack',
       title: 'ChatFit',
       description:
@@ -51,7 +63,7 @@ export class ProjetosComponent {
       label: 'Ver repositório',
     },
     {
-      id: '04',
+      id: '05',
       category: 'Inteligência artificial',
       title: 'CNN Heatmap Analysis',
       description:
@@ -60,18 +72,6 @@ export class ProjetosComponent {
       visual: 'heatmap',
       diagram: ['IMAGEM MÉDICA', 'CNN', 'HEATMAP / XAI'],
       url: 'https://github.com/TonnyThe2nd/CnnHeatmapAnalysis',
-      label: 'Ver repositório',
-    },
-    {
-      id: '05',
-      category: 'Full Stack',
-      title: 'Clima Search',
-      description:
-        'Consulta de condições climáticas ao redor do mundo, com integração de API pública e Google Maps para explorar temperatura, vento e umidade.',
-      techs: ['Angular', '.NET Core', 'TypeScript', 'REST API'],
-      visual: 'weather',
-      diagram: ['LOCALIZAÇÃO', 'API DE CLIMA', 'VISUALIZAÇÃO'],
-      url: 'https://github.com/TonnyThe2nd/ClimaSearchWebSite',
       label: 'Ver repositório',
     },
     {
@@ -85,6 +85,30 @@ export class ProjetosComponent {
       diagram: ['VÍDEO', 'MEDIAPIPE', 'RASTREAMENTO'],
       url: 'https://github.com/TonnyThe2nd/Hand-Detector-with-Drawing-Sensor',
       label: 'Ver repositório',
+    },
+    {
+      id: '07',
+      category: 'Back-end',
+      title: 'E-commerce com microsserviços',
+      description:
+        'Plataforma com serviços em .NET e comunicação assíncrona via Kafka. Arquitetura orientada a eventos para conectar os fluxos do e-commerce.',
+      techs: ['.NET', 'Kafka', 'SQL Server', 'Docker'],
+      visual: 'events',
+      diagram: ['API / .NET', 'APACHE KAFKA', 'MICROSSERVIÇOS'],
+      url: '',
+      label: '',
+    },
+    {
+      id: '08',
+      category: 'Inteligência artificial',
+      title: 'IA distribuída com RabbitMQ',
+      description:
+        'Classificação de imagens com CNNs e processamento assíncrono. Workers escaláveis conectam os modelos de IA à aplicação web.',
+      techs: ['TensorFlow', 'RabbitMQ', 'Angular', '.NET'],
+      visual: 'network',
+      diagram: ['IMAGEM', 'RABBITMQ', 'CNN / WORKERS'],
+      url: '',
+      label: '',
     },
   ];
   get visibleProjects() {
